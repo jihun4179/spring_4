@@ -3,15 +3,20 @@ package com.jawang.s4;
 import java.util.List;
 
 import javax.inject.Inject;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.multipart.MultipartHttpServletRequest;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.jawang.board.BoardDTO;
 import com.jawang.board.notice.NoticeService;
+import com.jawang.util.FileSarver;
 import com.jawang.util.Pager;
 
 @Controller
@@ -40,12 +45,12 @@ public class NoticeController {
 		return "board/boardList";
 	}
 	@RequestMapping(value="noticeSelect")
-	public String select(Model model, int num) throws Exception{
-		BoardDTO boardDTO = noticeService.select(num);
+	public String select(Model model, int num, RedirectAttributes rd) throws Exception{
+		String path = noticeService.select(num , model, rd);
 		
-		model.addAttribute("board", "notice");
-		model.addAttribute("dto",boardDTO);
-		return "board/boardSelect";
+		/*model.addAttribute("board", "notice");
+		model.addAttribute("dto",boardDTO);*/
+		return path;
 	}
 	@RequestMapping(value="noticeWrite", method=RequestMethod.GET)
 	public String write(Model model) {
@@ -53,15 +58,13 @@ public class NoticeController {
 		return "board/boardWrite";
 	}
 	@RequestMapping(value="noticeWrite", method=RequestMethod.POST)
-	public String write(BoardDTO boardDTO, RedirectAttributes rd) throws Exception{
+	public String write(BoardDTO boardDTO, HttpSession session , MultipartFile [] f1 ,RedirectAttributes rd) throws Exception{
+		String realPath = session.getServletContext().getRealPath("resources/upload");
+		//System.out.println(realPath);
+		//System.out.println(f1);
 		//System.out.println("write : " + boardDTO.getTitle());
 		int result = noticeService.insert(boardDTO);
-		
-		result=0;
-		if(result<1) {
-			rd.addFlashAttribute("msg", "Insert Fail");
-		}
-		
+	
 		return "redirect:./noticeList";
 		
 	}

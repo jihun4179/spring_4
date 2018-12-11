@@ -6,6 +6,9 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.inject.Inject;
+
+import org.apache.ibatis.session.SqlSession;
 import org.springframework.stereotype.Repository;
 
 import com.jawang.board.BoardDAO;
@@ -15,6 +18,14 @@ import com.jawang.util.Pager;
 
 @Repository
 public class NoticeDAO implements BoardDAO {
+	
+	@Inject
+	private SqlSession sqlSession;
+	private static final String NAMESPACE="noticeMapper.";
+	
+	public int getNum() throws Exception {
+		return sqlSession.selectOne(NAMESPACE+"getNum");
+	}
 	
 	@Override
 	public int totalCount(Pager pager) throws Exception {

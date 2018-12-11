@@ -7,6 +7,15 @@
 <title>Insert title here</title>
 </head>
 <body>
+	<h1>Login Page</h1>
+	
+	<form action="./login" method="post">
+		<input type = "text" name ="id">
+		<input type = "password"name ="pw">
+		<button>확인</button>	
+	</form>
+
+
 
 </body>
 </html>

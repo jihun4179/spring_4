@@ -5,9 +5,11 @@
   
  <configuration>
  	<typeAliases>
- 		<typeAlias type="com.jawang."/>
- 		<typeAlias type="com.jawang."/>
- 		<typeAlias type="com.jawang."/>
+ 		<typeAlias type="com.jawang.board.notice.NoticeDTO" alias="NoticeDTO"/>
+ 		<typeAlias type="com.jawang.board.qna.QnaDTO" alias="QnaDTO"/>
+ 		<typeAlias type="com.jawang.board.BoardDTO" alias="BoardDTO"/>
  		<typeAlias type="com.jawang.util.Pager" alias="Pager"/>
+ 		<typeAlias type="com.jawang.member.MemberDTO" alias="MemberDTO"/>
+ 		<typeAlias type="com.jawang.file.fileDTO" alias="fileDTO"/>
  	</typeAliases>
  </configuration>

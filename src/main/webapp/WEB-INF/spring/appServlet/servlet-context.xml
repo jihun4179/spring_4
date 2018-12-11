@@ -23,7 +23,7 @@
 	
 	<context:component-scan base-package="com.jawang.s4" />
 	<context:component-scan base-package="com.jawang.board.notice" />
-	<context:component-scan base-package="coml.jawang.board.qna" />
-	
+	<context:component-scan base-package="com.jawang.board.qna" />
+	<context:component-scan base-package="com.jawang.member"></context:component-scan>
 	
 </beans:beans>

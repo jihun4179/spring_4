@@ -1,5 +1,5 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@ page session="false" %>
+<%@ page session="true" %>
 <html>
 <head>
 	<title>Home</title>
@@ -13,6 +13,23 @@
 
 <a href = "./notice/noticeList?">Notice List</a>
 <a href = "./qna/qnaList">QnA List</a>
+<c:choose>
+	<c:when test="${member ne null}">
+			<p>
+				<a href="./member/logOut">LogOut</a> 
+				<a href="./member/myPage">MyPage</a>
+			</p>
+		</c:when>
+		<c:otherwise>
+			<p>
+				<a href="./member/join">Join</a> 
+				<a href="./member/login">Login</a>
+			</p>
+		</c:otherwise>
+</c:choose>
+
+
+
 
 
 </body>
