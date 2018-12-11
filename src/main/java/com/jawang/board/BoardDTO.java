@@ -2,6 +2,8 @@ package com.jawang.board;
 
 import java.sql.Date;
 
+import com.jawang.file.FileDTO;
+
 public class BoardDTO {
 	
 	
@@ -11,6 +13,16 @@ public class BoardDTO {
 	private String contents;
 	private Date reg_date;
 	private int hit;
+	
+	private FileDTO files;
+
+	public FileDTO getFiles() {
+		return files;
+	}
+
+	public void setFiles(FileDTO files) {
+		this.files = files;
+	} 
 	
 	public int getNum() {
 		return num;

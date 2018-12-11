@@ -5,6 +5,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 import javax.inject.Inject;
 
@@ -22,6 +23,11 @@ public class NoticeDAO implements BoardDAO {
 	@Inject
 	private SqlSession sqlSession;
 	private static final String NAMESPACE="noticeMapper.";
+	
+	public void test(Map<String, Object> map) throws Exception {
+		
+		
+	}
 	
 	public int getNum() throws Exception {
 		return sqlSession.selectOne(NAMESPACE+"getNum");

@@ -2,7 +2,9 @@ package com.jawang.board.notice;
 
 import static org.junit.Assert.*;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import javax.inject.Inject;
 
@@ -20,45 +22,19 @@ public class NoticeDAOTest extends AbstractTestCare{
 	
 	@Inject
 	private NoticeDAO noticeDAO;
-	
-	@AfterClass
-	public static void finish() {
-		System.out.println("Finish Test");
-	}
-	
-	@BeforeClass
-	public static void start() {
-		System.out.println("Start Test");
-	}
-	
-	@Before
-	public void before() {
-		System.out.println("Before Test");
-	}
-	
-	@After
-	public void after() {
-		System.out.println("After Test");
-	}
-	
-	@Test
-	public void deleteTest() {
-		System.out.println("Delete Test");
-	}
-	
-	@Test
-	public void updateTest() {
-		System.out.println("Update Test");
-	}
-	
-	@Test
-	public void insertTest() {
-		System.out.println("Insert Test");
-	}
-	
-	@Test
-	public void test() {
-		System.out.println("List Test");
-	}
 
+	@Inject
+	public void test() throws Exception {
+		Map<String, Object> map = new HashMap<String, Object>();
+		NoticeDTO noticeDTO = new NoticeDTO();
+		noticeDTO.setTitle("test");
+		noticeDTO.setWriter("test");
+		noticeDTO.setContents("test");
+		
+		map.put("noticeDTO", new NoticeDAO());
+		map.put("num", 0);
+		noticeDAO.test(map);
+		System.out.println(map.get("num"));
+	}
+	
 }
