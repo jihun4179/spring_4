@@ -9,7 +9,7 @@ import org.junit.Test;
 import com.jawang.board.BoardDTO;
 import com.jawang.board.notice.NoticeDAO;
 
-public class MyTest extends AbstractTestCare{
+public class MyTest extends AbstractTestCase{
 
 	@Inject	
 	private NoticeDAO noticeDAO;	

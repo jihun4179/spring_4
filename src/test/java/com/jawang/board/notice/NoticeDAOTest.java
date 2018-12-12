@@ -15,9 +15,9 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 import com.jawang.board.BoardDTO;
-import com.jawang.s4.AbstractTestCare;
+import com.jawang.s4.AbstractTestCase;
 
-public class NoticeDAOTest extends AbstractTestCare{
+public class NoticeDAOTest extends AbstractTestCase{
 
 	
 	@Inject

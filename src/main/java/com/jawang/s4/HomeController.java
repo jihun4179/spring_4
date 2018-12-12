@@ -10,6 +10,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 /**
  * Handles requests for the application home page.
@@ -36,4 +38,20 @@ public class HomeController {
 		return "home";
 	}
 	
+	@RequestMapping(value="/test")
+	public ModelAndView test() {
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("test");
+		mv.addObject("msg","test");
+		return mv;
+	}
+	
+	@RequestMapping(value="/test2")
+	public ModelAndView test2(RedirectAttributes redirectAttributes) {
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("redirect:./test");
+		mv.addObject("msg", "redirect");
+		return mv;
+		
+	}
 }

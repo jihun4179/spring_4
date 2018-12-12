@@ -5,9 +5,9 @@ import static org.junit.Assert.*;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-import com.jawang.s4.AbstractTestCare;
+import com.jawang.s4.AbstractTestCase;
 
-public class PagerTest extends AbstractTestCare {
+public class PagerTest extends AbstractTestCase {
 
 	private static Pager pager;
 	

@@ -10,11 +10,11 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-import com.jawang.s4.AbstractTestCare;
+import com.jawang.s4.AbstractTestCase;
 
 
 
-public class QnaDAOTest extends AbstractTestCare{
+public class QnaDAOTest extends AbstractTestCase{
 
 	@Inject
 	private QnaDAO qnaDAO;
